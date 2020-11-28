@@ -6,16 +6,6 @@ from pynput.keyboard import Listener
 
 print("import ok")
 
-def on_press(key):
-    global isRec
-    print(key)
-    if str(key) == "\'q\'":
-        isRec = False
-        print(isRec)
-
-def on_release(key):
-    pass
-
 # display screen resolution, get it from your OS settings
 SCREEN_SIZE = (1920, 1080)
 # define the codec
@@ -25,9 +15,7 @@ out = cv2.VideoWriter("output.avi", fourcc, 20.0, (SCREEN_SIZE))
 
 listaFrame = []
 
-isRec = True
-
-while isRec == True:
+while True:
     if(keyboard.is_pressed('q')):
         print("ciao")
         break
